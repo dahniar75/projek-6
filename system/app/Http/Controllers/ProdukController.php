@@ -50,10 +50,10 @@ class ProdukController extends Controller {
     function filter(){
         $nama = request('nama');
         $stok = explode(",", request('stok'));
-        $data['harga_min'] = $harga_min = explode('harga_min');
-        $data['harga_max'] = $harga_max = explode('harga_max');
-        // $data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->get();
-        //$data['list_produk'] = Produk::whereIn('stok',  $stok)->get();
+        //$data['harga_min'] = $harga_min = explode('harga_min');
+        //$data['harga_max'] = $harga_max = explode('harga_max');
+        //$data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->get();
+        $data['list_produk'] = Produk::whereIn('stok',  $stok)->get();
         //$data['list_produk'] = Produk::whereBetween('harga',  [$harga_min, $harga_max])->get();
         //$data['list_produk'] = Produk::where('nama', '<>', "$nama")->get();
         //$data['list_produk'] = Produk::whereNotIn('stok',  $stok)->get();
